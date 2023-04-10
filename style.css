@@ -6,8 +6,12 @@ body {
 }
 
 h2 {
+  line-height: 20px; /* height of each line */
+  height: 160px; /* total height of the text element */
+  width: 100%;
   font-weight:400;
   font-size: 24px;
+  overflow: hidden;
 }
 
 .header {
