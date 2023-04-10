@@ -1,14 +1,19 @@
 body {
   font-family: 'IBM Plex Mono', monospace;
-  padding: 0 30px;
+  /* padding: 0 30px; */
   margin: 0;
   background-color: #D9D9D9;
+}
+
+h1, h2 {
+  padding-left:2%;
+  padding-right: 2%;
 }
 
 h2 {
   line-height: 20px; /* height of each line */
   height: 160px; /* total height of the text element */
-  width: 100%;
+  /* width: 100%; */
   font-weight:400;
   font-size: 24px;
   overflow: hidden;
@@ -47,9 +52,8 @@ tr:hover + .default-text {
 
 .hover-image {
   height: 400px;
-  width:105%;
-  position: relative;
-  right: 30px;
+  width:115%;
+  position: sticky;
   background-position-x: left;
   z-index: 2;
   background-size: cover;
