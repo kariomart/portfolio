@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<title>martin nayeri</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+	<link rel="icon" type="image/png" href="images/favicon.png">
 	<link rel="stylesheet" href="style.css">
 
 	
@@ -20,8 +20,19 @@
 		</h2>
 	</div>
 
+	
 	<!-- <div class= "no-padding"><h1>??</h1></div> -->
 	<div class="hover-image no-padding"></div>
+
+	<div id="project-div" style="display:flex;">
+		<div id="backtotable">
+			<h1 style="flex:1">project name</h1>
+			<svg id="backtotablebutton" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.85355 2.14645C5.04882 2.34171 5.04882 2.65829 4.85355 2.85355L3.70711 4H9C11.4853 4 13.5 6.01472 13.5 8.5C13.5 10.9853 11.4853 13 9 13H5C4.72386 13 4.5 12.7761 4.5 12.5C4.5 12.2239 4.72386 12 5 12H9C10.933 12 12.5 10.433 12.5 8.5C12.5 6.567 10.933 5 9 5H3.70711L4.85355 6.14645C5.04882 6.34171 5.04882 6.65829 4.85355 6.85355C4.65829 7.04882 4.34171 7.04882 4.14645 6.85355L2.14645 4.85355C1.95118 4.65829 1.95118 4.34171 2.14645 4.14645L4.14645 2.14645C4.34171 1.95118 4.65829 1.95118 4.85355 2.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+		</div>
+		<h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lacinia eros eu feugiat malesuada. In hac habitasse platea dictumst. Fusce ultricies, massa quis posuere venenatis, enim diam aliquam nunc, eu tempus lorem ex nec erat. Suspendisse aliquet orci ut urna tincidunt lobortis. Nulla iaculis mauris eu molestie luctus. Sed tincidunt consequat nibh, eu commodo eros vestibulum a. Sed at erat pulvinar, placerat mi eget, tincidunt elit. Aenean ultricies placerat odio vitae maximus. Nam interdum, dolor vel dapibus condimentum, odio velit aliquam felis, nec laoreet orci lacus ac felis. In ut vehicula risus, in imperdiet urna. Proin eu condimentum augue. Donec aliquet accumsan velit, in suscipit odio dictum a. In sed mattis metus. Curabitur tempus metus magna, sit amet dignissim purus tristique id. </h2>
+	</div>
+
+
 	<table>
 		<thead>
 			<tr class="not-hoverable">
@@ -125,40 +136,8 @@
 		</tbody>
 	</table>
 
-	<script>
-		const rows = document.querySelectorAll('tr:not(.header)');
-		rows.forEach(row => {
-			row.addEventListener('mouseover', () => {
-				rows.forEach(r => {
-					if (r !== row) {
-						r.style.opacity = '0.5';
-					}
-				});
-			});
-			row.addEventListener('mouseout', () => {
-				rows.forEach(r => {
-					r.style.opacity = '1';
-				});
-			});
-		});
-	</script>
-	
+	<script src="interaction.js"></script>
 
-	<script>
-		const hoverImage = document.querySelector('.hover-image');
-		const tableRows = document.querySelectorAll('tbody tr');
-
-		tableRows.forEach(row => {
-			row.addEventListener('mouseover', () => {
-				const imgUrl = row.dataset.img;
-				hoverImage.style.backgroundImage = `url(${imgUrl})`;
-			});
-
-			row.addEventListener('mouseout', () => {
-				hoverImage.style.backgroundImage = '';
-			});
-		});
-	</script>
 </body>
 
 </html>

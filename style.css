@@ -62,11 +62,21 @@ tr:hover + .default-text {
 }
 
 table {
-  margin-top: 10px;
+  margin-top: -190px;
+  margin-left: 20px;
+  margin-right: 50px;
   width: 100%;
   border-collapse: collapse;
-  position: relative;
+  background-position:center;
+  position: absolute;
+  transition: transform 1s ease;
+  background-color: #D9D9D9;
 }
+
+table.moved-down {
+  transform: translateY(600px);
+}
+
 
 th,
 td {
@@ -108,4 +118,15 @@ tr:not(.not-hoverable):hover {
   transform: translateX(-5px);
   /* transition: background-color 0.2s ease;
   transition: transform 0.2s ease; */
+}
+
+#backtotable {
+  margin-left: 20px;
+  margin-right: 50px;
+  width: 100%;
+}
+
+#backtotable svg{
+  scale: 150%;
+  padding-left: 10%;
 }
