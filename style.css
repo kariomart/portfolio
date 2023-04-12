@@ -19,6 +19,18 @@ h2 {
   overflow: hidden;
 }
 
+.default-text h1
+{
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+}
+
+.default-text h2
+{
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
 .header {
   font-weight: bold;
   font-size: 80px;
