@@ -129,7 +129,6 @@ function addTableListeners() {
   });
 
   table.addEventListener('transitionend', () => {
-      console.log("animation end!");
       if (!selected){
         const details = document.querySelector('#projectdetails');
         details.style = "display: none;"
@@ -140,6 +139,7 @@ function addTableListeners() {
       row.addEventListener('mouseover', () => {
           if (!selected) {
               const imgUrl = row.dataset.img;
+              console.log(imgUrl);
               hoverImage.style.backgroundImage = `url(${imgUrl})`;
           }
       });
@@ -183,11 +183,12 @@ function addTableListeners() {
       i2.src = path + slug + "2.png";
   
       const imgUrl = row.dataset.img;
+      console.log(imgUrl);
       hoverImage.style.backgroundImage = `url(${imgUrl})`;
     });
 
       row.addEventListener('mouseout', () => {
-          console.log(selected);
+          // console.log(selected);
           if (!selected) {
               hoverImage.style.backgroundImage = '';
           }
