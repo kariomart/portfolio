@@ -73,10 +73,14 @@ tr:hover + .default-text {
   transition: background-image 0.1s ease;
 }
 
+.portfolio-table-container {
+  overflow-y: scroll;
+}
+
 table {
-  margin-top: -190px;
   margin-left: 20px;
   margin-right: 50px;
+  z-index: 3;
   width: 100%;
   border-collapse: collapse;
   background-position:center;
@@ -86,7 +90,8 @@ table {
 }
 
 table.moved-down {
-  transform: translateY(600px);
+  transform: translateY(2000px);
+  z-index: 3;
 }
 
 
@@ -132,13 +137,42 @@ tr:not(.not-hoverable):hover {
   transition: transform 0.2s ease; */
 }
 
-#backtotable {
+
+/* tr:not(.header) {
+  display: none;
+} */
+
+#projectdetails {
+  z-index: 1;
+  grid-template-columns: 1fr 4fr;
+  position: relative;
+  font-family: 'Inter', sans-serif;
   margin-left: 20px;
-  margin-right: 50px;
-  width: 100%;
+  padding-top: 20px;
 }
 
-#backtotable svg{
-  scale: 150%;
-  padding-left: 10%;
+#projectdetails > div:first-child {
+  min-width: 300px;
+  overflow-x: visible;
+  line-height: 3px;
+}
+
+#projectdetails div:last-child p {
+  padding-top: 10px;
+  padding-right: 2%;
+  margin-bottom: 0px;
+  line-height: 20px;
+}
+
+#projectdetails div:last-child img {
+  max-width: 96%;
+  object-fit: cover;
+  display:block;
+  width: auto;
+  height: auto;
+}
+
+#backtotablebutton {
+  scale: 80%;
+  padding-bottom: 10px
 }

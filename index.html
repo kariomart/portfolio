@@ -8,9 +8,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 	<link rel="icon" type="image/png" href="images/favicon.png">
 	<link rel="stylesheet" href="style.css">
+    <script src="table.js"></script>
+	<script src="interaction.js"></script>
 
 	
 </head>
@@ -22,130 +24,55 @@
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit luctus mattis. Ut massa arcu, mollis sed mi nec, semper efficitur dolor. Integer at magna molestie, efficitur ipsum sed, dapibus diam. Morbi in tempor nunc. Praesent tincidunt vel purus sit amet bibendum. Vestibulum maximus aliquet nulla, sit amet malesuada diam commodo quis. Praesent vel quam ut nunc scelerisque interdum vel in nisl. Nunc accumsan euismod lacus, quis blandit eros vulputate at. Integer tincidunt, elit eu dapibus cursus, arcu nulla suscipit sapien, sagittis fringilla metus elit at nulla.
 		</h2>
 	</div>
-
 	
-	<!-- <div class= "no-padding"><h1>??</h1></div> -->
 	<div class="hover-image no-padding"></div>
+	
+	<!-- <button onclick="restoreFullTable()">all</button>
+	<button id="filter-button" onclick="filterPersonal()">personal</button>
+	<button id="filter-button" onclick="filterClient()">client</button>
+	<button id="filter-button" onclick="filterUIUX()">ui/ux</button> -->
+	<div id="table-container"></div>
 
-	<div id="project-div" style="display:flex;">
-		<div id="backtotable">
-			<h1 style="flex:1">project name</h1>
-			<svg id="backtotablebutton" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.85355 2.14645C5.04882 2.34171 5.04882 2.65829 4.85355 2.85355L3.70711 4H9C11.4853 4 13.5 6.01472 13.5 8.5C13.5 10.9853 11.4853 13 9 13H5C4.72386 13 4.5 12.7761 4.5 12.5C4.5 12.2239 4.72386 12 5 12H9C10.933 12 12.5 10.433 12.5 8.5C12.5 6.567 10.933 5 9 5H3.70711L4.85355 6.14645C5.04882 6.34171 5.04882 6.65829 4.85355 6.85355C4.65829 7.04882 4.34171 7.04882 4.14645 6.85355L2.14645 4.85355C1.95118 4.65829 1.95118 4.34171 2.14645 4.14645L4.14645 2.14645C4.34171 1.95118 4.65829 1.95118 4.85355 2.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+
+	<div id="projectdetails" style="display: none;">
+		<div>
+			<svg id="backtotablebutton" width="30" height="25" viewBox="0 0 30 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.8" d="M0.803319 12.213C0.803319 12.8976 1.0442 13.4681 1.52595 13.9245L11.1674 23.5659C11.6618 24.0476 12.2069 24.2885 12.8028 24.2885C13.4747 24.2885 14.0199 24.0793 14.4382 23.661C14.8693 23.2299 15.0848 22.7038 15.0848 22.0826C15.0848 21.7276 15.0151 21.417 14.8756 21.1508C14.7361 20.8719 14.5587 20.631 14.3431 20.4281L11.3195 17.3855L6.26108 12.7645L5.27222 14.2097L11.2624 14.552H27.5216C28.2569 14.552 28.8401 14.3365 29.2712 13.9054C29.7149 13.4744 29.9367 12.9102 29.9367 12.213C29.9367 11.5284 29.7149 10.9706 29.2712 10.5395C28.8401 10.1085 28.2569 9.89295 27.5216 9.89295H11.2624L5.27222 10.2352L6.26108 11.6805L11.3195 7.05947L14.3431 3.9978C14.5587 3.79496 14.7361 3.56042 14.8756 3.29419C15.0151 3.01528 15.0848 2.69833 15.0848 2.34336C15.0848 1.72215 14.8693 1.20236 14.4382 0.783997C14.0199 0.352954 13.4747 0.137433 12.8028 0.137433C12.2069 0.137433 11.6618 0.378309 11.1674 0.860063L1.52595 10.5015C1.0442 10.9706 0.803319 11.541 0.803319 12.213Z" fill="black"/></svg>				
+			<h1 style="padding-left: 0px;">project name</h1>
+			<p style="font-style: italic; font-weight: 200;">videogame</p>
+			<br>
+	
+			<h3>client:</h3>
+			<h3 style="font-weight: 200;">a,b,c,d</h3>
+			<br>
+	
+			<h3>role:</h3>
+			<h3 style="font-weight: 200;">a,b,c,d</h3>
+			<br>
+	
+			<h3 style="margin-bottom: -10px;">responsibilities:</h3>
+			<h3 style="font-weight: 200; line-height: 20px;">a,b,c,d</h3>
+			<br>
+	
+			<h3 style="margin-bottom: -10px;">tools:</h3>
+			<h3 style="font-weight: 200; line-height: 20px;">a,b,c,d</h3>
+			<br>
+	
+			<a href="https://example.com">
+				<h3 style="color:black; text-decoration: underline;">->full case study</h3>
+			</a>
 		</div>
-		<h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lacinia eros eu feugiat malesuada. In hac habitasse platea dictumst. Fusce ultricies, massa quis posuere venenatis, enim diam aliquam nunc, eu tempus lorem ex nec erat. Suspendisse aliquet orci ut urna tincidunt lobortis. Nulla iaculis mauris eu molestie luctus. Sed tincidunt consequat nibh, eu commodo eros vestibulum a. Sed at erat pulvinar, placerat mi eget, tincidunt elit. Aenean ultricies placerat odio vitae maximus. Nam interdum, dolor vel dapibus condimentum, odio velit aliquam felis, nec laoreet orci lacus ac felis. In ut vehicula risus, in imperdiet urna. Proin eu condimentum augue. Donec aliquet accumsan velit, in suscipit odio dictum a. In sed mattis metus. Curabitur tempus metus magna, sit amet dignissim purus tristique id. </h2>
+	
+		<div>
+			<p>Column 2 content goes here</p>
+			<br>
+			<img src="images/projects/rewilding/rewilding1.png">
+			<br>
+			<br>
+			<br>
+			<img src="images/projects/rewilding/rewilding2.png">
+		</div>
 	</div>
 
-	<div id="table-container"></div>
-    <script src="table.js"></script>
-
-	<!-- <table>
-		<thead>
-			<tr class="not-hoverable">
-				<th>title↓</th>
-				<th>client↓</th>
-				<th>date↓</th>
-				<th>type↓</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr data-img="images/rewilding.png">
-				<td>→rewilding</td>
-				<td>personal</td>
-				<td>2023</td>
-				<td>game</td>
-				<td hidden>a meditative ecology game about growing a forest between long stretches of cryogenic hibernation.</td>
-			</tr>
-			<tr data-img="images/CHRONO.png">
-				<td>→CHRONO</td>
-				<td>personal</td>
-				<td>2018</td>
-				<td>game</td>
-				<td hidden>a two-player platform-fighter splattered with neon glow, kinetic movement, and just a sprinkle of bullet time.</td>
-			</tr>
-			<tr data-img="images/SnowCity.png">
-				<td>→Snow City</td>
-				<td>Coach</td>
-				<td>2021</td>
-				<td>game</td>
-				<td hidden>Award winning mobile game for Coach’s Give A Little Love campaign.</td>
-			</tr>
-			<tr data-img="images/KOI.png">
-				<td>→KOI</td>
-				<td>personal</td>
-				<td>2019</td>
-				<td>game</td>
-			</tr>
-			<tr data-img="images/LivePalette.png">
-				<td>→LivePalette UX</td>
-				<td>LivePalette</td>
-				<td>2022</td>
-				<td>ui/ux</td>
-			</tr>
-			<tr data-img="images/DataCommunity.png">
-				<td>→Data Community</td>
-				<td>LinkedIn</td>
-				<td>2019</td>
-				<td>ui/ux</td>
-			</tr>
-			<tr data-img="images/IRIDESCENT.png">
-				<td>→IRIDESCENT</td>
-				<td>personal</td>
-				<td>2020</td>
-				<td>audio</td>
-			</tr>
-			<tr data-img="images/FailHard.png">
-				<td>→FailHard. Podcast</td>
-				<td>Adobe</td>
-				<td>2023</td>
-				<td>audio</td>
-			</tr>
-			<tr data-img="images/Amex.png">
-				<td>→Podcast Sound Design</td>
-				<td>Amex</td>
-				<td>2020</td>
-				<td>audio</td>
-			</tr>
-			<tr data-img="images/KitchenAid.png">
-				<td>→Motion GFX</td>
-				<td>Kitchen Aid</td>
-				<td>2020</td>
-				<td>video</td>
-			</tr>
-			<tr data-img="images/iAPM.png">
-				<td>→iAPM Store Content</td>
-				<td>Coach</td>
-				<td>2020</td>
-				<td>creative tech</td>
-			</tr>
-			<tr data-img="images/Tmall.png">
-				<td>→Tmall Retail Experience</td>
-				<td>Coach</td>
-				<td>2021</td>
-				<td>ui/ux</td>
-			</tr>
-			<tr data-img="images/DisneyHarring.png">
-				<td>→Disney x Harring Trailer</td>
-				<td>Coach</td>
-				<td>2021</td>
-				<td>video</td>
-			</tr>
-			<tr data-img="images/Composite.png">
-				<td>→Composite Graphics</td>
-				<td>Composite Global</td>
-				<td>2020</td>
-				<td>3D</td>
-			</tr>
-			<tr data-img="images/3DRenders.png">
-				<td>→3D Renders</td>
-				<td>personal</td>
-				<td>2020</td>
-				<td>3D</td>
-				<td hidden>this is a proj description this is a proj description this is a proj descriptionthis is a proj descriptionthis is a proj descriptionthis is a proj descriptionthis is a proj description this is a proj descriptionthis is a proj descriptionthis is a proj description this is a proj description</td>
-			</tr>
-		</tbody>
-	</table> -->
-
-	<script src="interaction.js"></script>
 
 </body>
 

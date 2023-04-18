@@ -2,7 +2,14 @@
 const url = 'data.csv';
 let parsedData;
 let descIndex;
-let titleIndex
+let titleIndex;
+let clientIndex;
+let roleIndex;
+let responsibilitiesIndex;
+let toolsIndex;
+let dateIndex;
+let typeIndex;
+let slugIndex;
 
 // Use fetch() to retrieve the CSV data
 fetch(url)
@@ -14,13 +21,17 @@ fetch(url)
     const rows = parsedData.data;
 
     // Get the indices of the required columns
+    slugIndex = parsedData.meta.fields.indexOf("Slug");
     titleIndex = parsedData.meta.fields.indexOf("Title");
-    const clientIndex = parsedData.meta.fields.indexOf("Client");
-    const dateIndex = parsedData.meta.fields.indexOf("Date");
-    const typeIndex = parsedData.meta.fields.indexOf("Type");
+    clientIndex = parsedData.meta.fields.indexOf("Client");
+    roleIndex = parsedData.meta.fields.indexOf("Role");
+    responsibilitiesIndex = parsedData.meta.fields.indexOf("Responsibilities");
+    toolsIndex = parsedData.meta.fields.indexOf("Tools");
+    dateIndex = parsedData.meta.fields.indexOf("Date");
+    typeIndex = parsedData.meta.fields.indexOf("Type");
     descIndex = parsedData.meta.fields.indexOf("Description");
-    console.log(parsedData.meta.fields);
-    console.log(descIndex);
+    // console.log(parsedData.meta.fields);
+    // console.log(descIndex);
 
     // Generate the HTML table
     const table = document.createElement('table');
@@ -35,12 +46,15 @@ fetch(url)
       headerRow.appendChild(th);
     }
 
+    headerRow.classList.add("not-hoverable"); 
     table.appendChild(headerRow);
+
+    const tbody = document.createElement('tbody');
 
     for (let row of rows) {
       const tr = document.createElement('tr');
 
-      tr.dataset.img = "images/" + row[parsedData.meta.fields[0]] + ".png"; // Add custom data attribute to the row
+      tr.dataset.img = "images/projects/" + row[parsedData.meta.fields[0]] + "/" + row[parsedData.meta.fields[0]] + ".png"; // Add custom data attribute to the row
 
       const title = document.createElement('td');
       title.classList.add('portfolio-title'); // Add CSS class to the cell
@@ -62,17 +76,22 @@ fetch(url)
       type.textContent = row[parsedData.meta.fields[typeIndex]];
       tr.appendChild(type);
 
-      table.appendChild(tr);
+      tbody.appendChild(tr);
     }
 
+    tbody.setAttribute("id", "table-body");
+    table.appendChild(tbody);
+
     // Add the table to the page
-    const container = document.body;
+    const container = document.querySelector('#table-container');
+    container.classList.add('portfolio-table-container');
     container.appendChild(table);
     addTableListeners();
   })
   .catch(error => {
     console.error(error);
   });
+
 
 
 function addTableListeners() {
@@ -84,8 +103,6 @@ function addTableListeners() {
   const backbutton = document.getElementById('backtotablebutton');
 
   let selected = false;
-
-
 
   rows.forEach(row => {
       row.addEventListener('mouseover', () => {
@@ -107,11 +124,16 @@ function addTableListeners() {
       console.log("backbutton pressed");
       const selectedRow = null; // initialize as null
       table.classList.remove('moved-down');
+      hoverImage.style.backgroundImage = '';
       selected = false;
   });
 
-  table.addEventListener('animationend', () => {
-      myDiv.style.display = 'block';
+  table.addEventListener('transitionend', () => {
+      console.log("animation end!");
+      if (!selected){
+        const details = document.querySelector('#projectdetails');
+        details.style = "display: none;"
+      }
   });
 
   tableRows.forEach(row => {
@@ -126,16 +148,40 @@ function addTableListeners() {
       console.log("row clicked");
       const selectedRow = null; // initialize as null
       table.classList.add('moved-down');
+
+      const details = document.querySelector('#projectdetails');
+      details.style = "display: grid;"
       
-      const h2 = document.querySelector('#project-div h2');
-      const h1 = document.querySelector('#project-div h1');
+      const i1 = document.querySelectorAll('#projectdetails > div:last-child > img')[0];
+      const i2 = document.querySelectorAll('#projectdetails > div:last-child > img')[1];
+      const h2 = document.querySelector('#projectdetails > div:last-child > p');
+      const h1 = document.querySelector('#projectdetails h1');
+      const clientH3 = document.querySelectorAll('#projectdetails div h3')[1];
+      const roleH3 = document.querySelectorAll('#projectdetails div h3')[3];
+      const responsibilitiesH3 = document.querySelectorAll('#projectdetails div h3')[5];
+      const toolsH3 = document.querySelectorAll('#projectdetails div h3')[7];
       selected = true;
 
-      const desc = parsedData.data[row.rowIndex-1].Description;
       const title = parsedData.data[row.rowIndex-1].Title;
+      const desc = parsedData.data[row.rowIndex-1].Description;
+      const client = parsedData.data[row.rowIndex-1].Client;
+      const role = parsedData.data[row.rowIndex-1].Role;
+      const responsibilities = parsedData.data[row.rowIndex-1].Responsibilities;
+      const tools = parsedData.data[row.rowIndex-1].Tools;
+      const slug = parsedData.data[row.rowIndex-1].Slug;
 
       h1.textContent = title;
-      h2.textContent = desc;
+      h2.innerHTML = desc;
+      clientH3.textContent = client;
+      roleH3.textContent = role;
+      responsibilitiesH3.innerHTML = responsibilities;
+      toolsH3.innerHTML = tools;
+
+      const path = "images/projects/" + slug + "/";
+      console.log(path);
+      i1.src = path + slug + "1.png";
+      i2.src = path + slug + "2.png";
+  
       const imgUrl = row.dataset.img;
       hoverImage.style.backgroundImage = `url(${imgUrl})`;
     });
@@ -147,5 +193,66 @@ function addTableListeners() {
           }
       });
   });
+}
+
+function restoreFullTable() {
+  var table = document.getElementById("table-body");
+  var rows = table.getElementsByTagName("tr");
+
+  for (var i = 0; i < rows.length; i++) {
+    rows[i].style.display = "";
+  }
+}
+
+function filterUIUX() {
+  console.log("trying to filter UIUX!");
+  var filter = 'ui/ux'
+  var table = document.getElementById("table-body");
+  let client;
+
+  var rows = table.getElementsByTagName("tr");
+  for (var i = 0; i < rows.length; i++) {
+    client = rows[i].getElementsByTagName("td")[3].innerHTML.toLowerCase();
+    if (client == 'ui/ux') {
+      rows[i].style.display = "";
+    } else {
+      rows[i].style.display = "none";
+    }
+  }
+}
+
+
+function filterClient() {
+  console.log("trying to filter client!");
+  var filter = 'personal'
+  var table = document.getElementById("table-body");
+  let client;
+
+  var rows = table.getElementsByTagName("tr");
+  for (var i = 0; i < rows.length; i++) {
+    client = rows[i].getElementsByTagName("td")[1].innerHTML.toLowerCase();
+    if (client != 'personal') {
+      rows[i].style.display = "";
+    } else {
+      rows[i].style.display = "none";
+    }
+  }
+}
+
+function filterPersonal() {
+  console.log("trying to filter personal!");
+  var filter = 'personal'
+  var table = document.getElementById("table-body");
+  let client;
+
+  var rows = table.getElementsByTagName("tr");
+  for (var i = 0; i < rows.length; i++) {
+    client = rows[i].getElementsByTagName("td")[1].innerHTML.toLowerCase();
+    if (client.indexOf(filter) > -1) {
+      rows[i].style.display = "";
+    } else {
+      rows[i].style.display = "none";
+    }
+  }
 }
 
