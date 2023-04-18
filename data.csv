@@ -1,26 +1,25 @@
-Slug,Title,Client,Date,Type,Description,HeaderImage,Content
-rewilding,rewilding,personal,2023,game,a meditative ecology game about growing a forest between long stretches of cryogenic hibernation.,,"Rewilding is a meditative ecology game about growing a forest between long stretches of cryogenic hibernation. The story follows Syd and their mandated AI companion Geva as Syd struggles to unpack what brought them so far away from society. Through the centuries, Syd and Geva work to interface with a recovering ecosystem and foster a new normal. As the world moves on without them, Syd will have to decide what to do when their assignment ends.
-Gameplay focuses on an ecological simulation where plants are your main tools. Players choose plants based on their unique contributions to the overall ecosystem and work towards building a self-sustaining community of flora. As the years pass by, players will wander through a forest they helped design--a living, breathing entity all its own.
-UX and Interaction design by me. Game is WIP developed by Heavy Meadow."
-multipuck,MULTIPUCK,personal,2020,game,"after years on the age old international space station hardware, the game played by astronauts to pass the time has finally made its way back to earth...",,"MULTIPUCK was a game created for the launch of the international space station on November 20, 1998. Inspired by the minimalist yet eccentric arcade games of the time, it was designed to help the astronauts maintain their social connections with each other far from earth. After 20 years of floating in space, it has finally been brought home by Andrew R. Morgan on April 17th, 2020.
-
-MULTIPUCK was concepted, designed, and developed in full by me over the course of 6 months at the NYU Game Center. The game was released on May 21st 2020, and became a part of itch.io’s Bundle for Racial Justice and Equality shortly after.
-
-
-“what makes MULTIPUCK stand out is its flavor, its aesthetic, and attention to detail as you play a strange fusion of airhockey pinball. Everything feels like it is coming to life, moving with you as you keep up the pace and ensure the most points can be gained. Retro aesthetics can be finnicky, but it works wonders here to keep things simple yet succulent.”"
-chrono,CHRONO,personal,2018,game,"a two-player platform-fighter splattered with neon glow, kinetic movement, and just a sprinkle of bullet time.",,
-SnowCity,Snow City,Coach,2021,game,Award winning mobile game for Coach’s Give A Little Love campaign.,,
-koi,KOI,personal,2019,game,a minimalist abstraction of fish swimming through a vast ocean of ambient light and sound.,,
-LivePalette,LivePalette UX,LivePalette,2022,ui/ux,multimodal ui/ux for a complex web application interface,,
-DataCommunity,Data Community,LinkedIn,2019,ui/ux,"A sculptural, interactive experience helps guests explore data stories of interest while also leaving their unique, creative mark. In doing so, they become a visual part of the “data community” at LinkedIn.",,
-iridescent,IRIDESCENT,personal,2020,audio,the last 365 days have probably been the craziest of my life. music was often my escape from reality. this album reflects that sentiment. my spectrum of feelings colored by waveforms of sound.,,
-FailHard,FailHard. Podcast,Adobe,2023,audio,Lorem Ipsum,,
-OfficeRenderings,Office Renderings,rain,2020,3D,Lorem Ipsum,,
-KitchenAid,KitchenAid GFX,KitchenAid,2020,graphic,a designed visual language for video content & dynamic templates to aid in speeding up production workflow.,,
-Amex,Podcast Sound Design,Amex,2021,audio,Lorem Ipsum,,
-3DRenderings,3D Renderings,personal,2023,3D,Lorem Ipsum,,
-DisneyHarring,Disney x Harring Trailer,Coach,2021,video,Lorem Ipsum,,
-Tmall,Tmall Experience,Coach,2022,game,Lorem Ipsum,,
-iAPM,iAPM Mall Design,Coach,2020,creative tech,Coach’s first immersive digital store in Shanghai IAPM Mall,,
-nowruz23,Nowruz 2023,personal,2023,game,Lorem Ipsum,,
-CompositeGlobal,Composite Graphics,CompositeGlobal,2022,3D,a 3D animation for a cutting edge website building brand,,
+Slug,Title,Client,Date,Type,Description,Role,Responsibilities,Tools,HeaderImage,Content
+rewilding,rewilding,personal,2023,game,"<p>Rewilding is a meditative ecology game about growing a forest between long stretches of cryogenic hibernation. The story follows Syd and their mandated AI companion Geva as Syd struggles to unpack what brought them so far away from society. Through the centuries, Syd and Geva work to interface with a recovering ecosystem and foster a new normal. As the world moves on without them, Syd will have to decide what to do when their assignment ends.</p><p>Gameplay focuses on an ecological simulation where plants are your main tools. Players choose plants based on their unique contributions to the overall ecosystem and work towards building a self-sustaining community of flora. As the years pass by, players will wander through a forest they helped design--a living, breathing entity all its own. </p>
+<p> 2020 NYU Incubatee.</p>
+<p>Featured in Wired magazine. </p>",ui/ux designer,"ui design<br>
+ui implementation<br>
+interaction design<br>
+gameplay<br> programming<br>
+game feel<br>",unity<br>adobe illustrator,,
+multipuck,MULTIPUCK,personal,2020,game,"after years on the age old international space station hardware, the game played by astronauts to pass the time has finally made its way back to earth...",everything,development<br>game design<br>visual design<br>sound design<br>trailer design<br>,unity<br>photoshop<br>ableton live<br>cinema4d<br>after effects<br>,,
+chrono,CHRONO,personal,2018,game,"a two-player platform-fighter splattered with neon glow, kinetic movement, and just a sprinkle of bullet time.",everything,development<br>game design<br>visual design<br>sound design<br>trailer design<br>,unity<br>photoshop<br>ableton live<br>,,
+SnowCity,Snow City,Coach,2021,game,Award winning mobile game for Coach’s Give A Little Love campaign.,game developer,,,,
+koi,KOI,personal,2019,game,a minimalist abstraction of fish swimming through a vast ocean of ambient light and sound.,,,,,
+LivePalette,LivePalette UX,LivePalette,2022,ui/ux,multimodal ui/ux for a complex web application interface,,,,,
+DataCommunity,Data Community,LinkedIn,2019,ui/ux,"A sculptural, interactive experience helps guests explore data stories of interest while also leaving their unique, creative mark. In doing so, they become a visual part of the “data community” at LinkedIn.",,,,,
+iridescent,IRIDESCENT,personal,2020,audio,the last 365 days have probably been the craziest of my life. music was often my escape from reality. this album reflects that sentiment. my spectrum of feelings colored by waveforms of sound.,,,,,
+FailHard,FailHard. Podcast,Adobe,2023,audio,Lorem Ipsum,,,,,
+OfficeRenderings,Office Renderings,rain,2020,3D,Lorem Ipsum,,,,,
+KitchenAid,KitchenAid GFX,KitchenAid,2020,graphic,a designed visual language for video content & dynamic templates to aid in speeding up production workflow.,,,,,
+Amex,Podcast Sound Design,Amex,2021,audio,Lorem Ipsum,,,,,
+3DRenderings,3D Renderings,personal,2023,3D,Lorem Ipsum,,,,,
+DisneyHarring,Disney x Harring Trailer,Coach,2021,video,Lorem Ipsum,,,,,
+Tmall,Tmall Experience,Coach,2022,game,Lorem Ipsum,,,,,
+iAPM,iAPM Mall Design,Coach,2020,creative tech,Coach’s first immersive digital store in Shanghai IAPM Mall,,,,,
+nowruz23,Nowruz 2023,personal,2023,game,Lorem Ipsum,,,,,
+CompositeGlobal,Composite Graphics,CompositeGlobal,2022,3D,a 3D animation for a cutting edge website building brand,,,,,
