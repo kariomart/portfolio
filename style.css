@@ -5,6 +5,10 @@ body {
   background-color: #D9D9D9;
 }
 
+header-right {
+  float: right;
+}
+
 h1, h2 {
   padding-left:2%;
   padding-right: 2%;
