@@ -1,6 +1,6 @@
 // Set the URL of the CSV file
-// const url = 'data.csv';
-const url = 'http://localhost/PortfolioContent2.csv';
+const url = 'data.csv';
+// const url = 'http://localhost/PortfolioContent3.csv';
 // import { prominent } from 'color.js'
 
 let parsedData;
@@ -179,6 +179,7 @@ function addTableListeners() {
         const roleH3 = document.querySelectorAll('#projectdetails div h3')[3];
         const responsibilitiesH3 = document.querySelectorAll('#projectdetails div h3')[5];
         const toolsH3 = document.querySelectorAll('#projectdetails div h3')[7];
+        const gradient = document.querySelector('.gradient-background');
         selected = true;
 
         const title = parsedData.data[rowIndex].Title;
@@ -188,6 +189,11 @@ function addTableListeners() {
         const responsibilities = parsedData.data[rowIndex].Responsibilities;
         const tools = parsedData.data[rowIndex].Tools;
         const slug = parsedData.data[rowIndex].Slug;
+        console.log(parsedData.data[rowIndex]);
+        let colors = parsedData.data[rowIndex].Colors;
+        colors = colors.toString().split(",");
+        const gradientString = `linear-gradient(to right, ${colors[0]}, ${colors[1]})`;
+
 
         h1.textContent = title;
         h2.innerHTML = desc;
@@ -200,6 +206,8 @@ function addTableListeners() {
         console.log(path);
         i1.src = path + slug + "1.png";
         i2.src = path + slug + "2.png";
+        console.log(gradient);
+        gradient.style.background = gradientString;
 
         const imgUrl = row.dataset.img;
         console.log(imgUrl);
@@ -344,7 +352,6 @@ function sortTable(n) {
 
 function findRowIndexByName(name) {
   for (let i = 0; i < parsedData.data.length; i++) {
-    console.log(parsedData.data[i].Title + " " + name);
     if (parsedData.data[i].Title === name) {
       return i;
     }

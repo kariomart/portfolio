@@ -148,7 +148,7 @@ tr:hover~tr:not(.not-hoverable) td {
 tr:not(.not-hoverable):hover {
   transition: all 0.2s ease-out;
   background-color: #c2d9d8;
-  transform: translateX(-5px);
+  transform: translateX(-10px);
   /* transition: background-color 0.2s ease;
   transition: transform 0.2s ease; */
 }
