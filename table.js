@@ -1,5 +1,5 @@
 // Set the URL of the CSV file
-const url = 'http://localhost/PortfolioContent2.csv';
+const url = 'data.csv';
 // import { prominent } from 'color.js'
 
 let parsedData;
