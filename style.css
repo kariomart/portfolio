@@ -1,0 +1,226 @@
+:root {
+  --gradient: linear-gradient(
+    45deg,
+    #845ec2,
+    #d65db1,
+  )
+
+}
+
+body {
+  font-family: 'IBM Plex Mono', monospace;
+  /* padding: 0 30px; */
+  margin: 0;
+  background-color: #D6E4E3;
+}
+
+@keyframes bg-animation {
+  0% {background-position: left;}
+  100% {background-position: right;}
+}
+
+h1, h2 {
+  padding-left:2%;
+  padding-right: 2%;
+}
+
+h2 {
+  line-height: 20px; /* height of each line */
+  height: 160px; /* total height of the text element */
+  /* width: 100%; */
+  font-weight:400;
+  font-size: 24px;
+  overflow: hidden;
+}
+
+.header {
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  position: absolute;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  top: -20px;
+  color: #3b4a44;
+}
+
+.header h1 {
+  font-weight: 900;
+  font-size: 60px;
+  position: absolute;
+  flex: 1;
+  margin-right: 200px;
+}
+
+.header img {
+  position: absolute;
+  top: 55px;
+  right: 20px;
+  height: 50px;
+  margin-right: 20px;
+}
+
+.header h2 {
+  font-weight: 400;
+  font-size: 18px;
+  flex: 1 1 100%;
+  margin-top: 125px;
+  margin-right: 100px;
+}
+
+tr:hover + .default-text {
+  display: none;
+}
+
+.hover-image {
+  height: 400px;
+  width:115%;
+  position: sticky;
+  background-position-x: left;
+  z-index: 2;
+  background-size: cover;
+  background-position:left;
+  transition: background-image 0.1s ease;
+}
+
+.portfolio-title {
+  font-weight: 500;
+}
+
+.portfolio-table-container {
+  overflow-y: scroll;
+}
+
+table {
+  margin-left: 20px;
+  margin-right: 50px;
+  z-index: 3;
+  width: 100%;
+  border-collapse: collapse;
+  background-position:center;
+  position: absolute;
+  transition: transform 1s ease;
+  background-color: #D6E4E3;
+}
+
+table.moved-down {
+  transform: translateY(2000px);
+  z-index: 3;
+}
+
+
+th,
+td {
+  padding: 2px;
+  padding-left: 10px;
+  padding-right: 5px;
+  font-size: 20px;
+  text-align: left;
+  cursor: default;
+  /* border-bottom: 1px solid #ddd; */
+  opacity: 1;
+}
+
+th {
+  border-bottom: 1px solid #333;
+  padding-bottom: 10px;
+  font-weight:400;
+  opacity: .5;
+  font-size: 16px;
+  background-color: transparent;
+  transition: all 0 ease-in;
+  cursor:pointer;
+
+}
+
+tr {
+  transition: all 0.2s ease-in;
+}
+
+tr:hover td {
+  opacity: 1;
+}
+
+tr:hover~tr:not(.not-hoverable) td {
+  opacity: 0.5;
+}
+
+tr:not(.not-hoverable):hover {
+  transition: all 0.2s ease-out;
+  background-color: #c2d9d8;
+  transform: translateX(-5px);
+  /* transition: background-color 0.2s ease;
+  transition: transform 0.2s ease; */
+}
+
+
+/* tr:not(.header) {
+  display: none;
+} */
+
+#projectdetails {
+  z-index: 1;
+  grid-template-columns: 1fr 4fr;
+  position: relative;
+  font-family: 'Inter', sans-serif;
+  margin-left: 20px;
+  padding-top: 20px;
+}
+
+#projectdetails > div:first-child {
+  top: 0;
+  left: 0;
+  position: sticky;
+  min-width: 300px;
+  overflow-x: visible;
+  /* overflow-y:; */
+  line-height: 3px;
+}
+
+#projectdetails div:last-child p {
+  padding-top: 10px;
+  padding-right: 2%;
+  margin-bottom: 0px;
+  line-height: 20px;
+}
+
+#projectdetails div:last-child img {
+  max-width: 96%;
+  object-fit: cover;
+  display:block;
+  width: auto;
+  height: auto;
+}
+
+#backtotablebutton {
+  scale: 80%;
+  padding-bottom: 10px
+}
+
+.gradient-background {
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 2000px;
+  opacity: 0;
+  background-size: 400%;
+  background-image: linear-gradient(to bottom right, #584a39, #11c15d);
+  animation: gradient-animation 10s infinite alternate;
+  transition: opacity 3s ease-in-out;
+}
+
+.gradient-background.visible {
+  opacity: .3;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
+
+
