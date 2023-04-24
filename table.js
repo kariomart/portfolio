@@ -1,5 +1,6 @@
 // Set the URL of the CSV file
-const url = 'data.csv';
+// const url = 'data.csv';
+const url = 'http://localhost/PortfolioContent2.csv';
 // import { prominent } from 'color.js'
 
 let parsedData;
@@ -33,6 +34,7 @@ fetch(url)
     dateIndex = parsedData.meta.fields.indexOf("Date");
     typeIndex = parsedData.meta.fields.indexOf("Type");
     descIndex = parsedData.meta.fields.indexOf("Description");
+    colorIndex = parsedData.meta.fields.indexOf("Colors");
     // console.log(parsedData.meta.fields);
     // console.log(descIndex);
 
@@ -58,10 +60,11 @@ fetch(url)
       const tr = document.createElement('tr');
 
       tr.dataset.img = "images/projects/" + row[parsedData.meta.fields[0]] + "/" + row[parsedData.meta.fields[0]] + ".png"; // Add custom data attribute to the row
+      // tr.data.colors = row[parsedData.meta.fields[colorIndex]]
 
       const title = document.createElement('td');
       title.classList.add('portfolio-title'); // Add CSS class to the cell
-      title.textContent = "→" + row[parsedData.meta.fields[titleIndex]];
+      title.textContent = /*"→" + */row[parsedData.meta.fields[titleIndex]];
       tr.appendChild(title);
 
       const client = document.createElement('td');
@@ -98,6 +101,7 @@ fetch(url)
 
 
 function addTableListeners() {
+
   const hoverImage = document.querySelector('.hover-image');
   const tableRows = document.querySelectorAll('tr');
   const table = document.querySelector('table');
@@ -154,6 +158,11 @@ function addTableListeners() {
 
       row.addEventListener('mousedown', () => {
         console.log("row clicked");
+        const t = row.cells[0].textContent;
+        const rowIndex = findRowIndexByName(t);
+        console.log("PROPER ROW: " + rowIndex);
+
+
         const selectedRow = null; // initialize as null
         table.classList.add('moved-down');
         const gradientDiv = document.querySelector('.gradient-background');
@@ -172,13 +181,13 @@ function addTableListeners() {
         const toolsH3 = document.querySelectorAll('#projectdetails div h3')[7];
         selected = true;
 
-        const title = parsedData.data[row.rowIndex - 1].Title;
-        const desc = parsedData.data[row.rowIndex - 1].Description;
-        const client = parsedData.data[row.rowIndex - 1].Client;
-        const role = parsedData.data[row.rowIndex - 1].Role;
-        const responsibilities = parsedData.data[row.rowIndex - 1].Responsibilities;
-        const tools = parsedData.data[row.rowIndex - 1].Tools;
-        const slug = parsedData.data[row.rowIndex - 1].Slug;
+        const title = parsedData.data[rowIndex].Title;
+        const desc = parsedData.data[rowIndex].Description;
+        const client = parsedData.data[rowIndex].Client;
+        const role = parsedData.data[rowIndex].Role;
+        const responsibilities = parsedData.data[rowIndex].Responsibilities;
+        const tools = parsedData.data[rowIndex].Tools;
+        const slug = parsedData.data[rowIndex].Slug;
 
         h1.textContent = title;
         h2.innerHTML = desc;
@@ -332,5 +341,18 @@ function sortTable(n) {
     }
   }
 }
+
+function findRowIndexByName(name) {
+  for (let i = 0; i < parsedData.data.length; i++) {
+    console.log(parsedData.data[i].Title + " " + name);
+    if (parsedData.data[i].Title === name) {
+      return i;
+    }
+  }
+  return -1; // return -1 if name not found
+}
+
+
+
 
 
