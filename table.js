@@ -15,6 +15,7 @@ let typeIndex;
 let slugIndex;
 let table;
 
+
 // Use fetch() to retrieve the CSV data
 fetch(url)
   .then(response => response.text())
@@ -42,7 +43,7 @@ fetch(url)
     table = document.createElement('table');
     table.classList.add('portfolio-table'); // Add CSS class to the table
 
-    const headers = ["Title", "Client", "Date", "Type"];
+    const headers = ["Title↓", "Client↓", "Type↓", "Date↓"];
     const headerRow = document.createElement('tr');
 
     for (let header of headers) {
@@ -72,16 +73,17 @@ fetch(url)
       client.textContent = row[parsedData.meta.fields[clientIndex]];
       tr.appendChild(client);
 
-      const date = document.createElement('td');
-      date.classList.add('portfolio-date'); // Add CSS class to the cell
-      date.textContent = row[parsedData.meta.fields[dateIndex]];
-      tr.appendChild(date);
-
+      
       const type = document.createElement('td');
       type.classList.add('portfolio-type'); // Add CSS class to the cell
       type.textContent = row[parsedData.meta.fields[typeIndex]];
       tr.appendChild(type);
 
+      const date = document.createElement('td');
+      date.classList.add('portfolio-date'); // Add CSS class to the cell
+      date.textContent = row[parsedData.meta.fields[dateIndex]];
+      tr.appendChild(date);
+      
       tbody.appendChild(tr);
     }
 
@@ -153,6 +155,8 @@ function addTableListeners() {
           const imgUrl = row.dataset.img;
           console.log(imgUrl);
           hoverImage.style.backgroundImage = `url(${imgUrl})`;
+          // var hoverSFX = new Audio("audio/hover.wav");
+          // hoverSFX.play();
         }
       });
 
@@ -206,7 +210,7 @@ function addTableListeners() {
         console.log(path);
         i1.src = path + slug + "1.png";
         i2.src = path + slug + "2.png";
-        console.log(gradient);
+        console.log(gradientString);
         gradient.style.background = gradientString;
 
         const imgUrl = row.dataset.img;

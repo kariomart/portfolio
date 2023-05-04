@@ -7,11 +7,16 @@
 
 }
 
+@font-face {
+  font-family: Roam;
+  src: url(roam.otf);
+}
+
 body {
   font-family: 'IBM Plex Mono', monospace;
   /* padding: 0 30px; */
   margin: 0;
-  background-color: #D6E4E3;
+  background-color: #D9D9D9;
 }
 
 @keyframes bg-animation {
@@ -41,15 +46,31 @@ h2 {
   align-items: center;
   flex-wrap: wrap;
   top: -20px;
-  color: #3b4a44;
+  /* background-color: #FF0000;
+  color: #fcfffe; */
 }
 
 .header h1 {
-  font-weight: 900;
+  /* font-family: Roam; */
+  color: rgb(0, 0, 0);
+  font-weight: 800;
   font-size: 60px;
+  letter-spacing: 0px;
   position: absolute;
   flex: 1;
+  top: 10px;
   margin-right: 200px;
+}
+
+.header h2 {
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 25px;
+  letter-spacing: 0px;
+  flex: 1 1 100%;
+  margin-top: 125px;
+  margin-right: 220px;
+  user-select: text;
 }
 
 .header img {
@@ -60,13 +81,6 @@ h2 {
   margin-right: 20px;
 }
 
-.header h2 {
-  font-weight: 400;
-  font-size: 18px;
-  flex: 1 1 100%;
-  margin-top: 125px;
-  margin-right: 100px;
-}
 
 tr:hover + .default-text {
   display: none;
@@ -84,7 +98,7 @@ tr:hover + .default-text {
 }
 
 .portfolio-title {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .portfolio-table-container {
@@ -92,15 +106,16 @@ tr:hover + .default-text {
 }
 
 table {
+  font-family: 'Inter', sans-serif;
   margin-left: 20px;
   margin-right: 50px;
   z-index: 3;
-  width: 100%;
+  width: 98%;
   border-collapse: collapse;
   background-position:center;
   position: absolute;
   transition: transform 1s ease;
-  background-color: #D6E4E3;
+  background-color: #D9D9D9;
 }
 
 table.moved-down {
@@ -194,7 +209,9 @@ tr:not(.not-hoverable):hover {
 
 #backtotablebutton {
   scale: 80%;
-  padding-bottom: 10px
+  padding-bottom: 10px;
+  cursor: pointer;
+  z-index: 3;
 }
 
 .gradient-background {
@@ -204,7 +221,7 @@ tr:not(.not-hoverable):hover {
   height: 2000px;
   opacity: 0;
   background-size: 400%;
-  background-image: linear-gradient(to bottom right, #584a39, #11c15d);
+  background-image: linear-gradient(to bottom right, #459cbb,#2c316f);
   animation: gradient-animation 10s infinite alternate;
   transition: opacity 3s ease-in-out;
 }
